@@ -2,10 +2,10 @@
 
 Esse projeto foi proposto como atividade do final do segundo semestre do curso de desenvolvimento de sistemas do  **SENAI - São José -SC**, a atividade requeria
 
- - [ ] Java Poo 															---> valendo 1,0  ponto
- - [ ] MVC																	--->  não seria avaliado
- - [ ] REST																	---> valendo 1,0 ponto
- - [ ] Serviços Web Crud											---> valendo 2,0 pontos
+ - [x ] Java Poo 															---> valendo 1,0  ponto
+ - [ x] MVC																	--->  não seria avaliado
+ - [ x] REST																	---> valendo 1,0 ponto
+ - [x ] Serviços Web Crud											---> valendo 2,0 pontos
  - [ ] Serviço listar Carros Disponiveis						--->  valendo 1,0 ponto
  - [ ] Serviço calcular Margem de Lucro em 15% 	---> valendo 2,5 pontos
  - [ ] Serviço atualizar lucro total								---> valendo 2,5 pontos
