@@ -51,4 +51,9 @@ public class ControleCarro {
 
         dao.deletarCarro(id);
     }
+    /*----------------------------------------------*/
+    public static String pegarOsDisponiveis() throws SQLException {
+       DaoCarro dao = new DaoCarro();
+       return GSON.toJson(dao.pegarDisponiveis());
+    }
 }

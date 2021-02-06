@@ -65,6 +65,14 @@ public class ServicoCarro {
     public String buscarPeloId(@PathParam("id") int id) throws SQLException {
         return ControleCarro.pegarCarroPeloId(id);
     }
+    /*----------------------------------------------*/
+    @GET
+    @Path("/listarDisponiveis")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String buscarOsDisponiveis() throws SQLException{
+        return ControleCarro.pegarOsDisponiveis();
+    }
     
     /*----------------------------------------------*/
     @POST
@@ -80,8 +88,7 @@ public class ServicoCarro {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String editarUsuarioPeloId(@PathParam("id") int id, String content) throws SQLException {
-
+    public String editarCarroPeloId(@PathParam("id") int id, String content) throws SQLException {
         ControleCarro.atualizarCarro(id, content);
         return content;
     }
@@ -89,8 +96,10 @@ public class ServicoCarro {
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("{id}")
-    public void deletarUsuario(@PathParam("id") int id) throws SQLException {
+    public void deletarCarro(@PathParam("id") int id) throws SQLException {
         ControleCarro.deletarCarro(id);
-
     }
+    /*----------------------------------------------*/
+    
+    
 }

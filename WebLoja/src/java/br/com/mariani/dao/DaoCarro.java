@@ -20,8 +20,6 @@ public class DaoCarro {
     public DaoCarro() {
         con = ConnectionFactory.getConnection();
     }
-    
-    
 
     /*------------------------------------------------------------*/
     public void addCarroNoBanco(Carro carro) throws SQLException {
@@ -78,8 +76,41 @@ public class DaoCarro {
     }
 
     /*------------------------------------------------------------*/
+    public List<Carro> pegarDisponiveis() throws SQLException {
+        String sql = "SELECT * FROM carro where situacao = true";
+
+        List<Carro> list = new ArrayList<>();
+
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+
+        try {
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+
+            while (rs.next()) {
+                Carro carro = new Carro();
+                carro.setRenavan(rs.getString("renavan"));
+                carro.setModelo(rs.getString("modelo"));
+                carro.setMontadora(rs.getString("montadora"));
+                carro.setCor(rs.getString("cor"));
+                carro.setAno(rs.getInt("ano"));
+                carro.setPreco(rs.getDouble("preco"));
+                carro.setRenavan(rs.getString("renavan"));
+                carro.setSituacao(rs.getBoolean("situacao"));
+                list.add(carro);
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao buscar lista do banco. " + e);
+        } finally {
+            ConnectionFactory.fecharConexao(con, stm, rs);
+        }
+        return list;
+    }
+
+    /*------------------------------------------------------------*/
     public void updateCarro(int id, Carro carro) throws SQLException {
-        String sql = "update usuario set renavan = ?, modelo =?, montadora=?, cor =?, ano = ?, preco = ?, situacao =? where id = ?";
+        String sql = "update carro set renavan = ?, modelo =?, montadora=?, cor =?, ano = ?, preco = ?, situacao =? where id = ?";
 
         PreparedStatement stm = null;
         try {
@@ -129,13 +160,13 @@ public class DaoCarro {
         }
         return carro;
     }
-    /*------------------------------------------------------------*/
 
+    /*------------------------------------------------------------*/
     public void deletarCarro(int id) throws SQLException {
         String sql = "DELETE FROM carro WHERE id = ?";
 
         PreparedStatement stm = null;
-        
+
         try {
             stm = con.prepareStatement(sql);
             stm.setInt(1, id);
@@ -148,4 +179,5 @@ public class DaoCarro {
             ConnectionFactory.fecharConexao(con, stm);
         }
     }
+
 }
