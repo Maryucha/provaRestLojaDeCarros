@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  *
  * @author maryucha
@@ -179,5 +180,30 @@ public class DaoCarro {
             ConnectionFactory.fecharConexao(con, stm);
         }
     }
+
+    /*------------------------------------------------------------*/
+    public Double buscarNoBancoValorvendido(double valorVendas) throws SQLException {
+        String sql = "SELECT SUM(preco) AS valor FROM carro where situacao = false";
+        
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+
+        try {
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+
+            if (rs.next()) {
+                valorVendas = rs.getDouble("valor");
+               
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao fazer o select " + e);
+            return null;
+        } finally {
+            ConnectionFactory.fecharConexao(con, stm, rs);
+        }
+        return valorVendas;
+    }
+    /*------------------------------------------------------------*/
 
 }
