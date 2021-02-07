@@ -70,6 +70,9 @@ Minha api usa as seguntes rotas:
  * ATUALIZAR CARRO > http://localhost:8080/WebLoja/carro/{ID}
  * BUSCAR CARRO > http://localhost:8080/WebLoja/carro/{ID}
  * BUSCAR TODOS > http://localhost:8080/WebLoja/carro
+ * SELECIONAR DISPONIVEIS> http://localhost:8080/WebLoja/carro/listardisponiveis
+ * MOSTRAR TAXA DE LUCRO> http://localhost:8080/WebLoja/carro/taxalucro
+ * ATUALIZAR TAXA DE LUCRO> http://localhost:8080/WebLoja/carro/updatetaxalucro/{TAXA}
 
 #Json
 -
@@ -113,3 +116,11 @@ No meu projeto aproveitei o conhecimento pré adquirido em estudos por conta e  
 **Design Pattern** & Classe ConectionFactory
 -
 Seguindo esse padrão de conexão com o banco fiz a minha aplicação que em um aplicação mais complexa facilmente posso dar manutenção sem bugar todo o código.
+
+
+#Select com View 
+-
+Para buscar dados de mais campos e soma;
+
+ SELECT sum(carro.preco) AS sum
+   FROM carro;
