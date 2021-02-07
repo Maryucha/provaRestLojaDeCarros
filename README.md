@@ -2,20 +2,20 @@
 
 Esse projeto foi proposto como atividade do final do segundo semestre do curso de desenvolvimento de sistemas do  **SENAI - São José -SC**, a atividade requeria
 
- - [x] Java Poo 															---> valendo 1,0  ponto
- - [x] MVC																	--->  não seria avaliado
- - [x] REST																	---> valendo 1,0 ponto
- - [x] Serviços Web Crud											---> valendo 2,0 pontos
- - [x] Serviço listar Carros Disponiveis						--->  valendo 1,0 ponto
- - [x] Serviço calcular Margem de Lucro em 15% 	---> valendo 2,5 pontos
- - [x] Serviço atualizar lucro total								---> valendo 2,5 pontos
+ - [x] Java Poo 								---> valendo 1,0  ponto
+ - [x] MVC									--->  não seria avaliado
+ - [x] REST									---> valendo 1,0 ponto
+ - [x] Serviços Web Crud							---> valendo 2,0 pontos
+ - [x] Serviço listar Carros Disponiveis					--->  valendo 1,0 ponto
+ - [x] Serviço calcular Margem de Lucro em 15% 					---> valendo 2,5 pontos
+ - [x] Serviço atualizar lucro total						---> valendo 2,5 pontos
  **EXTRAS**
  - [x] JDBC *integração com banco de dados*
  - [x] Design Pattern Connection
 
 #MVC
 -
-minha estrutura MVC consiste em 
+Minhas estrutura está organizada da seguinte forma: 
 
 java>
 		
