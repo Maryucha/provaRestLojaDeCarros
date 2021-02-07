@@ -67,14 +67,14 @@ public class ServicoCarro {
     }
     /*----------------------------------------------*/
     @GET
-    @Path("/TrazerLucro")
+    @Path("/trazerlucro")
     @Produces(MediaType.APPLICATION_JSON)
     public String getLucro() throws SQLException{
         return ControleCarro.lucroSobreCarrosVendidos();
     }
     /*----------------------------------------------*/
     @GET
-    @Path("/listarDisponiveis")
+    @Path("/listardisponiveis")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public String buscarOsDisponiveis() throws SQLException{
@@ -82,20 +82,19 @@ public class ServicoCarro {
     }
     /*----------------------------------------------*/
     @GET
-    @Path("/TaxaLucro")
+    @Path("/taxalucro")
     @Produces(MediaType.APPLICATION_JSON)
     public String buscarTaxaLucro() throws SQLException{
-       
         return ControleCarro.mostraTaxa();
     }
     /*----------------------------------------------*/
     @PUT
-    @Path("/UpdateLucro/{lucro}")
+    @Path("/updatetaxalucro/{lucropassado}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String editarCarroPeloId(@PathParam("lucro") double lucro, String content) throws SQLException {
-        ControleCarro.atualizarTaxa(lucro, content);
-        return content;
+    public String editarCarroPeloId(@PathParam("lucropassado") double lucropassado) throws SQLException {
+        String resposta = ControleCarro.atualizarTaxa(lucropassado);
+        return resposta;
     }
     /*----------------------------------------------*/
     @POST

@@ -17,7 +17,7 @@ public class ControleCarro {
 
     static final Gson GSON = new Gson();
     static double valorVendas = 0;
-    static double lucro = 0.15;
+    private static double lucro = 15;
     static double lucroReal = 0;
     static NumberFormat nf = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
 
@@ -65,6 +65,7 @@ public class ControleCarro {
     /*----------------------------------------------*/
     static public String lucroSobreCarrosVendidos() throws SQLException {
         DaoCarro dao = new DaoCarro();
+        System.out.println(lucro);
         valorVendas = dao.buscarNoBancoValorvendido(valorVendas);
         lucroReal = valorVendas * lucro;
 
@@ -73,16 +74,19 @@ public class ControleCarro {
     }
 
     /*----------------------------------------------*/
-    static public String mostraTaxa(){
-        return GSON.toJson(lucro);
+    static public String mostraTaxa() {
+        double lucroNovo = lucro/100;
+        lucro=lucroNovo;
+        System.out.println(lucro);
+        return GSON.toJson(nf.format(lucro));
     }
 
-    static public String atualizarTaxa(double lucropassado, String content) {
-        System.out.println(lucro);
-        lucropassado = GSON.fromJson(content, Double.TYPE);
-        System.out.println(lucropassado);
-       return GSON.toJson(lucro);
-       
+    /*----------------------------------------------*/
+    static public String atualizarTaxa(double lucroPassado) {
+
+        lucro = lucroPassado;
+        return GSON.toJson(nf.format(lucro));
+
     }
-    
+
 }
