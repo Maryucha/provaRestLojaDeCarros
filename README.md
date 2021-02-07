@@ -7,11 +7,11 @@ Esse projeto foi proposto como atividade do final do segundo semestre do curso d
  - [x] REST																	---> valendo 1,0 ponto
  - [x] Serviços Web Crud											---> valendo 2,0 pontos
  - [x] Serviço listar Carros Disponiveis						--->  valendo 1,0 ponto
- - [ ] Serviço calcular Margem de Lucro em 15% 	---> valendo 2,5 pontos
- - [ ] Serviço atualizar lucro total								---> valendo 2,5 pontos
+ - [x] Serviço calcular Margem de Lucro em 15% 	---> valendo 2,5 pontos
+ - [x] Serviço atualizar lucro total								---> valendo 2,5 pontos
  **EXTRAS**
- - [ ] JDBC *integração com banco de dados*
- - [ ] Design Pattern Connection
+ - [x] JDBC *integração com banco de dados*
+ - [x] Design Pattern Connection
 
 #MVC
 -
